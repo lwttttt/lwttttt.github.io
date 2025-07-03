@@ -16,20 +16,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-# Default layouts
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: project
-
 # Exclude from processing
 exclude:
   - .sass-cache/
@@ -42,5 +28,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - projects/
 
 #Update all the sections by editing the files inside _includes folder.
