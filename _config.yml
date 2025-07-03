@@ -4,18 +4,31 @@ title: Wenting Luan
 email: luanwenting20@163.com
 website_github: Github
 website_google: Google Scholar
-port: 8000
 
 # GitHub Pages settings
 baseurl: ""
 url: "https://lwttttt.github.io"
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 
 # Build settings
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
 
 # Exclude from processing
 exclude:
