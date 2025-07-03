@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOWA</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYX00ZNY9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YYX00ZNY9V');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Maison+Mono" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MOWA: Multiple-in-One Image Warping Model</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://lwttttt.github.io/" target="_blank">Albert Luan</a>,</span>
+              <span class="author-block">
+                <a href="https://zsyoaoa.github.io/" target="_blank">Zongsheng Yue</a>,</span>
+              <span class="author-block">
+                <a href="https://wu-zhonghua.github.io/" target="_blank">Zhonghua Wu</a>,</span>
+              <span class="author-block">
+                <a href="https://www.mmlab-ntu.com/person/ccloy/index.html" target="_blank">Chen Change Loy</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">S-Lab, Nanyang Technological University</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">TPAMI 2025</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.10716" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/lwttttt/MOWA" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="padding-bottom: 0px; padding-top: 0px;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-two-thirds">
+          <p>
+            <b>MOWA</b> is a practical multiple-in-one image warping framework, particularly in computational photography, where six distinct tasks are considered. 
+            Compared to previous works tailored to specific tasks, our method can solve various warping tasks from different camera models or manipulation spaces in a single framework.
+            It also demonstrates an ability to generalize to novel scenarios, as evidenced in both <em>cross-domain</em> and <em>zero-shot</em> evaluations.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div style="text-align: center;">
+    <img src="static/images/teaser.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 800px;">
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3" id="warping_results">Warping Results</h2>
+          <p style="text-align: left;">
+            <b>Results on Test Datasets.</b> Qualitative comparison of our multiple-in-one framework MOWA to the SOTA image warping models: The red dotted lines mark the horizon, and the arrows highlight the inferior warped parts such as the irregular boundaries and distorted semantics. 
+          </p>
+          <div style="text-align: center;">
+           <img src="static/images/cp_all.jpg" style="padding: 2rem 0rem 3rem 0rem; width: 1300px;">
+          </div>
+          <p style="text-align: left;">
+            <b>Cross-Domain and Zero-Shot Evaluations.</b> Generalization evaluation: cross-domain evaluation (top) and zero-shot evaluation (bottom). In image retargeting results, the red dotted lines measure the stretch extent of the face or body by warping operations. 
+          </p>
+          <div style="text-align: center;">
+           <img src="static/images/generalization_all.jpg" style="padding: 2rem 0rem 3rem 0rem; width: 1000px;">
+          </div>
+          <p style="text-align: left;">
+            <b>Extended to Multi-View Warping.</b> While MOWA is originally designed for single-image warping tasks, it can be extended to multi-view image warping applications such as image alignment, image stitching, and stereo image rectification.
+          </p>
+          <div style="text-align: center;">
+           <img src="static/images/cross_view.png" style="padding: 2rem 0rem 0rem 0rem; width: 1300px;">
+          </div>
+        <div class="has-text-centered content">
+          <h5>
+            <em><b>See <a href="#additional">below</a> for <a href="#additional">more warping results</a>.</b></em>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Play the Warping! Flow Visualization and Interaction</h2>
+      </div>
+      <p style="text-align: left; padding: 0rem 0rem 2rem 0rem;">
+        Warping flow bridges the geometric gap between the input and target images. It can typically be visualized using a colormap, where the color hue represents the <em>flow direction</em> and the saturation signifies the <em>flow magnitude</em>.
+        We provide an interactive visualization to show the MOWA's estimated displacement of each pixel. Please <b>hover over</b> the warping flows or input images to see how the arrow changes and where the point is warped. For mobile users, please try to tag and drag the pixels.
+        All examples are resized into the same resolution of 512x512 for compact display.
+      </p>
+
+      <!-- stitch1 -->
+      <div class="has-text-centered" id="stitch1">
+        <p class="prompt"><b>Stitched Images</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz stitch1 flow" width="512" height="384"
+                data-json-path="./static/examples/rectangling/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/input1.jpg" class="canvasBGImage">
+              <canvas class="viz stitch1 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/output1.jpg" class="canvasBGImage">
+              <canvas class="viz stitch1 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- stitch3 -->
+      <div class="has-text-centered" id="stitch3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/flow4.jpg" class="canvasBGImage">
+              <canvas class="viz stitch3 flow" width="512" height="384"
+                data-json-path="./static/examples/rectangling/flow4.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/input4.jpg" class="canvasBGImage">
+              <canvas class="viz stitch3 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/output4.jpg" class="canvasBGImage">
+              <canvas class="viz stitch3 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- stitch2 -->
+      <div class="has-text-centered" id="stitch2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/flow5.jpg" class="canvasBGImage">
+              <canvas class="viz stitch2 flow" width="512" height="384"
+                data-json-path="./static/examples/rectangling/flow5.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/input5.jpg" class="canvasBGImage">
+              <canvas class="viz stitch2 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rectangling/output5.jpg" class="canvasBGImage">
+              <canvas class="viz stitch2 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- wide_angle1 -->
+      <div class="has-text-centered" id="wide_angle1">
+        <p class="prompt"><b>Rectified Wide-Angle Images</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle1 flow" width="512" height="512"
+                data-json-path="./static/examples/wide_angle/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/input1.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle1 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/output1.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle1 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- wide_angle2 -->
+      <div class="has-text-centered" id="wide_angle2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle2 flow" width="512" height="512"
+                data-json-path="./static/examples/wide_angle/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/input2.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle2 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/output2.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle2 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- wide_angle3 -->
+      <div class="has-text-centered" id="wide_angle3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/flow3.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle3 flow" width="512" height="512"
+                data-json-path="./static/examples/wide_angle/flow3.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/input3.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle3 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/wide_angle/output3.jpg" class="canvasBGImage">
+              <canvas class="viz wide_angle3 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- rs1 -->
+      <div class="has-text-centered" id="rs1">
+        <p class="prompt"><b>Unrolling Shutter Images</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz rs1 flow" width="512" height="512"
+                data-json-path="./static/examples/rs/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/input1.jpg" class="canvasBGImage">
+              <canvas class="viz rs1 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/output1.jpg" class="canvasBGImage">
+              <canvas class="viz rs1 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- rs2 -->
+      <div class="has-text-centered" id="rs2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz rs2 flow" width="512" height="512"
+                data-json-path="./static/examples/rs/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/input2.jpg" class="canvasBGImage">
+              <canvas class="viz rs2 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/output2.jpg" class="canvasBGImage">
+              <canvas class="viz rs2 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- rs3 -->
+      <div class="has-text-centered" id="rs3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/flow3.jpg" class="canvasBGImage">
+              <canvas class="viz rs3 flow" width="512" height="512"
+                data-json-path="./static/examples/rs/flow3.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/input3.jpg" class="canvasBGImage">
+              <canvas class="viz rs3 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rs/output3.jpg" class="canvasBGImage">
+              <canvas class="viz rs3 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- rotation1 -->
+      <div class="has-text-centered" id="rotation1">
+        <p class="prompt"><b>Rotated Images</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz rotation1 flow" width="512" height="384"
+                data-json-path="./static/examples/rotation/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/input1.jpg" class="canvasBGImage">
+              <canvas class="viz rotation1 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/output1.jpg" class="canvasBGImage">
+              <canvas class="viz rotation1 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- rotation2 -->
+      <div class="has-text-centered" id="rotation2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz rotation2 flow" width="512" height="384"
+                data-json-path="./static/examples/rotation/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/input2.jpg" class="canvasBGImage">
+              <canvas class="viz rotation2 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/output2.jpg" class="canvasBGImage">
+              <canvas class="viz rotation2 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- rotation3 -->
+      <div class="has-text-centered" id="rotation3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/flow3.jpg" class="canvasBGImage">
+              <canvas class="viz rotation3 flow" width="512" height="384"
+                data-json-path="./static/examples/rotation/flow3.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/input3.jpg" class="canvasBGImage">
+              <canvas class="viz rotation3 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/rotation/output3.jpg" class="canvasBGImage">
+              <canvas class="viz rotation3 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- fisheye1 -->
+      <div class="has-text-centered" id="fisheye1">
+        <p class="prompt"><b>Fisheye Images</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye1 flow" width="512" height="512"
+                data-json-path="./static/examples/fisheye/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/input1.png" class="canvasBGImage">
+              <canvas class="viz fisheye1 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/output1.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye1 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- fisheye2 -->
+      <div class="has-text-centered" id="fisheye2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye2 flow" width="512" height="512"
+                data-json-path="./static/examples/fisheye/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/input2.png" class="canvasBGImage">
+              <canvas class="viz fisheye2 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/output2.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye2 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- fisheye3 -->
+      <div class="has-text-centered" id="fisheye3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/flow3.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye3 flow" width="512" height="512"
+                data-json-path="./static/examples/fisheye/flow3.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/input3.png" class="canvasBGImage">
+              <canvas class="viz fisheye3 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/fisheye/output3.jpg" class="canvasBGImage">
+              <canvas class="viz fisheye3 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- portrait1 -->
+      <div class="has-text-centered" id="portrait1">
+        <p class="prompt"><b>Portrait Photos</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz portrait1 flow" width="512" height="384"
+                data-json-path="./static/examples/portrait/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/input1.jpg" class="canvasBGImage">
+              <canvas class="viz portrait1 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/output1.jpg" class="canvasBGImage">
+              <canvas class="viz portrait1 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- portrait2 -->
+      <div class="has-text-centered" id="portrait2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz portrait2 flow" width="512" height="384"
+                data-json-path="./static/examples/portrait/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/input2.jpg" class="canvasBGImage">
+              <canvas class="viz portrait2 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/output2.jpg" class="canvasBGImage">
+              <canvas class="viz portrait2 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- portrait3 -->
+      <div class="has-text-centered" id="portrait3">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/flow3.jpg" class="canvasBGImage">
+              <canvas class="viz portrait3 flow" width="512" height="384"
+                data-json-path="./static/examples/portrait/flow3.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/input3.jpg" class="canvasBGImage">
+              <canvas class="viz portrait3 src" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/portrait/output3.jpg" class="canvasBGImage">
+              <canvas class="viz portrait3 gen" width="512" height="384"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- retargeting1 -->
+      <div class="has-text-centered" id="retargeting1">
+        <p class="prompt"><b>Image Retargeting</b></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/flow1.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting1 flow" width="512" height="512"
+                data-json-path="./static/examples/retargeting/flow1.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/input1.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting1 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/output1.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting1 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- retargeting2 -->
+      <div class="has-text-centered" id="retargeting2">
+        <p class="prompt"></p>
+      </div>
+      <div class="flex">
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/flow2.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting2 flow" width="512" height="512"
+                data-json-path="./static/examples/retargeting/flow2.json"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warping Flow</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/input2.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting2 src" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Input Image</b></p>
+            <p style="font-size: 10pt;" class="hoverMe">(Hover over me)</p>
+          </div>
+        </div>
+        <div class="flexWrapper">
+          <div class="outsideWrapper">
+            <div class="insideWrapper">
+              <img src="static/examples/retargeting/output2.jpg" class="canvasBGImage">
+              <canvas class="viz retargeting2 gen" width="512" height="512"></canvas>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <p><b>Warped Result</b></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3" id="warping_results">Method</h2>
+          <p style="text-align: left;">
+            <b>Framework.</b> To mitigate the difficulty of multi-task learning, we propose to decouple the motion estimation in both the region level (TPS control points with increasing refined numbers) and pixel level (residual flow).
+            Additionally, a prompt learning module, guided by a lightweight point-based classifier, is designed to facilitate task-aware image warpings.
+          </p>
+
+          <div style="text-align: center;">
+           <img src="static/images/framework-1.jpg" style="padding: 2rem 0rem 2rem 0rem; width: 800px;">
+          </div>
+
+          <p style="text-align: left;">
+            <b>TPS Control Point.</b> The TPS transformation stands out for its remarkable flexibility to model complex motions. It is adept at performing image warping based on two sets of region-level control points. 
+            We visualize the estimation results of control points from different levels and progressive warping results as follows.
+          </p>
+        
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/stitch1_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/stitch2_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 0.5rem 0px; width: 32%;">
+              <img src="static/images/stitch3_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/stitch1_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/stitch2_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 1rem 0px; width: 32%;">
+              <img src="static/images/stitch3_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/rotation1_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/rotation2_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 0.5rem 0px; width: 32%;">
+              <img src="static/images/rotation3_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/rotation1_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/rotation2_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 1rem 0px; width: 32%;">
+              <img src="static/images/rotation3_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/fisheye1_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/fisheye2_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 0.5rem 0px; width: 32%;">
+              <img src="static/images/fisheye3_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/fisheye1_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/fisheye2_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 1rem 0px; width: 32%;">
+              <img src="static/images/fisheye3_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+        
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/portrait1_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 0.5rem 0px; width: 32%;">
+              <img src="static/images/portrait2_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 0.5rem 0px; width: 32%;">
+              <img src="static/images/portrait3_mesh.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/portrait1_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 2% 1rem 0px; width: 32%;">
+              <img src="static/images/portrait2_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+            <div style="margin: 1rem 0% 1rem 0px; width: 32%;">
+              <img src="static/images/portrait3_img.gif" alt="GIF Image" style="border: 2px solid #000;">
+            </div>
+          </div>
+
+          <p style="text-align: left;">
+            <b>Prompt Learning.</b> To dynamically boost the task-aware image warping in a single model, a prompt learning module is presented in MOWA.
+            The performance conflicts of different tasks can be relieved by the proposed prompt learning. All tasks show a similar improvement trend as the training epoch increases, and the framework achieves the unified and best warping performance on all tasks at the end of training epochs.
+            (Recap. Task 1: stitched images, Task 2: rectified wide-angle images, Task 3: unrolling shutter images, Task 4: rotated images, Task 5: fisheye images, Task 6: portrait photos.)
+          </p>
+          
+          <div style="text-align: center;">
+           <img src="static/images/prompt.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+          </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3" id="additional">More Warping Results</h2>
+      </div>
+      <div style="text-align: center;">
+       <img src="static/images/cp_stitch.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Stitched Images</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_rotation.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Rotated Images</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_rec_rs_fisheye.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Rectified Wide-Angle, Unrolling Shutter, and Fisheye Images</b>
+      </p>
+      <p style="text-align: center; font-size: 14px;">
+        (For each comparison, we show the input image, results of comparison methods and MOWA, and ground truth from left to right.)
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_portrait.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Portrait Photos</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_stitch_real.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Stitched Images (Cross-Domain)</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_fisheye_real.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Fisheye Images (Cross-Domain)</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/cp_portrait_real.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Portrait Photos (Cross-Domain)</b>
+      </p>
+      <div style="text-align: center;">
+       <img src="static/images/zero_shot.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 1000px;">
+      </div>
+      <p style="text-align: center; font-size: 20px;">
+        <b>Image Retargeting (Zero-Shot)</b>
+      </p>
+     
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="additional">References</h2>
+          <p id="ref1">[1] Bookstein, Fred L., "<a href="https://user.engineering.uiowa.edu/~aip/papers/bookstein-89.pdf" target="_blank">Principal Warps: Thin-Plate Splines and the Decomposition of Deformations</a>", TPAMI 1989.</p>
+          <p id="ref2">[2] Kaiming He, Huiwen Chang, Jian Sun, "<a href="https://kaiminghe.github.io/publications/sig13pano.pdf" target="_blank">Rectangling Panoramic Images via Warping</a>", SIGGRAPH 2013.</p>
+          <p id="ref3">[3] Daniel Geng, "<a href="https://github.com/dangeng/flow_web_viz/" target="_blank">Flow Web Visualization</a>".</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-four-fifths">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@article{liao2024mowa,
+  author    = {Luan, Wenting and Other, Authors},
+  title     = {MOWA: Multiple-in-One Image Warping Model},
+  journal   = {arXiv preprint arXiv:2404.10716},
+  year      = {2024},
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We borrow the source code of this website from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> which is licensed
+            under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+
+  <!--<script src="./static/js/flow.js"></script>-->
+  <script src="./static/js/flow_viz.js"></script>
+
+  <!-- Change call to action under interactive viz if on mobile -->
+  <script>
+    if (navigator.userAgent.match(/Mobile/)) {
+      var paragraphs = document.querySelectorAll('p.hoverMe');
+      paragraphs.forEach(paragraph => 
+        {paragraph.textContent = "(Tap and drag me)"}
+      );
+    }
+  </script>
+</body>
+
+</html>
