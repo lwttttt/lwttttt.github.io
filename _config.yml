@@ -12,4 +12,22 @@ url: "https://lwttttt.github.io"
 markdown: kramdown
 theme: jekyll-theme-minimal
 
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
 #Update all the sections by editing the files inside _includes folder.
