@@ -28,6 +28,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - projects/
 
 #Update all the sections by editing the files inside _includes folder.
