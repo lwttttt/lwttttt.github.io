@@ -3,193 +3,736 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+    <title>Wenting Luan</title>
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wenting Luan</title>
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="assets/images/log.png">
-
+    <meta name="description" content="Wenting Luan's Homepage">
+    
+    <link rel="shortcut icon" href="favicon.ico">  
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="assets/css/main.css">
-    <script src="bootstrap/js/bootstrap.min.js"></script>  
-
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">   
+    <!-- github corner --> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-88572407-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="row"> 
-            <div class='row'>
-    <div class='col-xs-3'>
-		<div class='photo'>
-			<img src="assets/images/Wenting.jpg" alt="photo" height="200" width="150">
-		</div>
-	</div>
-	<div class='col-xs-9'>
-			<h3>
-				Wenting Luan 栾汶庭
-			</h3>
-			<p>
-				I am currently a first-year direct PhD student at Institute of Intelligent Science, Nation University of Defense Technology (NUDT), supervised by Prof. Yongbin Zheng and Prof. Zongtan Zhou. Prior to that, I received the B.S. degree from National University of Defense Technology (NUDT) in 2024.
-			</p>
-			<p>
-			
-			<h3>
-			Research Interests 
-			</h3> 
-			<p>
-				My current research interests primarily focus on the computing geometry and image warping.
-			</p>
-			
-			<h3 style="padding-top:-5px"></h3>
-			
-			
-				 <a href="mailto:luanwenting20@163.com"><i class="fa fa-envelope"></i> &nbsp; luanwenting20@163.com</a>
-			
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			
-				 <a href="https://github.com/lwttttt" target="_blank"><i class="fa fa-globe"></i> &nbsp; Github</a>
-					
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			
-	</div>
+
+		<div class="row"> 
+		      
+			 <div class="col-md-3" id="profile">
+    <div style="margin-top: 20px;">
+        <img src="assets/images/wenting.jpg" class="img-thumbnail" width="200px" height="200px">
+    </div>
+</div>
+
+<div class="col-md-9" id="introduction">
+    <h2>Wenting Luan</h2>
+    <p>PhD Student at National University of Defense Technology (NUDT)</p>
+    
+    <p>My research interests include:</p>
+    <ul>
+        <li>Computer Vision</li>
+        <li>Image Processing</li>
+        <li>Computational Photography</li>
+    </ul>
+
+    <p><b>Email:</b> luanwenting@nudt.edu.cn</p>
 </div>
   
-            <hr>
-            <div class="publications">
-    <div class="publication-section">
-        <h2 class="section-title"><i class="fa fa-book"></i> Projects & Publications</h2>
-        <div class="intro">
-            <p>My research projects and publications will be listed here.</p>
-        </div>
-    </div>
+			 <hr>
+		     <head>
+	<style>
+		body{
+			color: #333;
+		}
+		#container{
+			min-width: 1000px;
+			width: 1000px;
+/*			overflow: auto;
+*/			margin: 50px auto;padding: 30px;
+			/*zoom: 1;*/
+*//*			border: 1px solid #ccc;background: #fc9;color: #fff;
+*/		}
+		#left{
+			float: left;
+			width: 400px;
+			height: 230px;
+			margin-left: 0px;
+		}
+		#right{
+			float: left;
+			width: auto;
+			margin-left: 50px;
+		}
+		#name{
+			font-size: 22.0pt;
+		    mso-bidi-font-size: 24.0pt;
+		    font-family: Times;
+		    mso-bidi-font-family: Times;
+		        font-weight: bold;
+		}
+		#info{
+		    font-size: 16.0pt;
+		    mso-bidi-font-size: 17.0pt;
+		    font-family: Times;
+		    mso-bidi-font-family: Times;
+		    margin-top: 30px;
+		    margin-left: 5px;
+		    margin-bottom: 10px;
+		    
+		}
+		.clear{clear:both; height: 0; line-height: 0; font-size: 0}
+		.Bio{
+			font-size:16.0pt;
+			mso-bidi-font-size:17.0pt;
+			line-height:150%;
+			font-family:Times;
+			mso-bidi-font-family:Lato-Regular;
+			text-align: justify;
+		}
+		span.SpellE {
+		    mso-style-name: "";
+		    mso-spl-e: yes;
+		}
+		span.Title{
+			    font-size: 22.0pt;
+			    mso-bidi-font-size: 17.0pt;
+			    font-family: Times;
+			    mso-bidi-font-family: Lato-Regular;
+			    font: bold;
+			    margin-top: 10px;
+		}
+		div.section{
+			padding-top: 30px;
+		}
+		
+		div.sub-left{
+			float: left;
+			width: 250px;
+						
+		}
+		div.sub-left img{
+			vertical-align: middle;
+			horizontal-align: middle;
+			margin-top: 10px;
+		}
+		
+		div.sub-left span{
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+						
+		}
+		div.sub-right{
+			float: left;
+			width: 700px;			
+		}
+		.paper{
+			overflow: auto;
+			zoom:1;
+			padding-bottom: 0px;
+			min-height: 150px;
 
-    <!-- Project Template -->
+		}
+		.paperTitle{
+			font-size:14.0pt;
+			mso-bidi-font-size:18.0pt;
+			font-family:Times;
+			mso-bidi-font-family:Times;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		.paperName,.paperPub{
+		    font-size: 12.0pt;
+		    mso-bidi-font-size: 13.0pt;		    
+		    font-family: Times;
+		    mso-bidi-font-family: Times;
+		    line-height:150%;
+		}
+		.link{
+		    font-size: 12.0pt;
+		    mso-bidi-font-size: 13.0pt;
+		    font-family: Times;
+		    mso-bidi-font-family: Times;
+		    margin-top: 10px;
+		    margin-bottom: 0px;
+		}
+		.special{
+		    margin-top: 0in;
+		    margin-bottom: 0in;
+		    margin-left: -.9pt;
+		    margin-bottom: .0001pt;
+		    text-indent: .9pt;
+		    mso-pagination: none;
+		    tab-stops: 13.75in;
+		    mso-layout-grid-align: none;
+		    text-autospace: none;
+		}
+		.long div.sub-left, .long div.sub-right{
+			height: 300px;
+			width: 950px;
+
+		}
+		.short div.sub-left, .short div.sub-right{
+			height:160px;
+
+		}
+		div.sub-left,div.sub-right{
+			height:200px;
+
+		}
+	</style>
+</head>
+
+<h3>
+	<a name='pre'></a> Selected Preprint
+</h3>
+
 		<div class="paper short">
 				<div class="sub-left">
 					<span></span>
-            <img src="assets/images/iccv2025.jpg" width="240" height="130">
+					<img src="assets/images/Calib_Survey.png" width="240" height="130">
 				</div>
 				<div class="sub-right">
 				<div class="media">
 				  <div class="media-body">
 					<p class="media-heading">
-                        <strong>ConboNet: a unified Content and Boundary modeling approach for one-stage wide-angle image correction</strong><br />
-                        Lifting the Structural Morphing for Wide-Angle Images Rectification: Unified Content and Boundary Modeling.<br />
-                        <a href="projects/conbonet/">[Project Page]</a>
-                        <a href="https://github.com/lwttttt/ConBo-Net">[Github]</a>
+					  <strong>Deep Learning for Camera Calibration and Beyond: A Survey</strong><br />
+					   <strong>Kang Liao</strong>, Lang Nie, Shujuan Huang, Chunyu Lin, Jing Zhang, Yao Zhao, Moncef Gabbouj, Dacheng Tao<br />
+					   <a href="https://arxiv.org/pdf/2303.10559.pdf">[arXiv]</a>
+					   <a href="https://github.com/KangLiao929/Awesome-Deep-Camera-Calibration">[Project Page]</a>
 					</p>
-				  </div>
 				  </div>
 				</div>	
 				</div>
 			</div>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #333;
-    }
-    .container {
-        min-width: 1000px;
-        width: 1000px;
-        margin: 50px auto;
-        padding: 30px;
-    }
-    .paper {
-        overflow: auto;
-        zoom: 1;
-        padding-bottom: 20px;
-        min-height: 150px;
-    }
-    .sub-left {
-        float: left;
-        width: 250px;
-    }
-    .sub-right {
-        float: left;
-        width: 700px;            
-    }
-    .media {
-        border-left: 6px #D26900 solid;
-    }
-    .media-body {
-        padding-left: 20px;
-    }
-    .media-heading {
-        font-size: 14pt;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .media-heading strong {
-        font-weight: bold;
-    }
-    .section-title {
-        margin-bottom: 20px;
-    }
-    .intro {
-        margin-bottom: 30px;
-    }
-</style>
+<h3>
+	<a name='publications'></a> Selected Publications
+</h3>
 
-            <hr>
-            <div class="news">
-	<h2>News</h2>
-	<ul>
-		<li>
-			<i class="fa fa-flag"></i>
-			[2024.09] Started my PhD journey at NUDT
-		</li>
-		<li>
-			<i class="fa fa-flag"></i>
-			[2024.08] Started working on ConboNet project
-		</li>
-	</ul>
-</div>
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/MOWA.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>MOWA: Multiple-in-One Image Warping Model</strong><br />
+					   <strong>Kang Liao</strong>, Zongsheng Yue, Zhonghua Wu, Chen Change Loy<br />
+					   IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI 2025</strong>)<br />
+					   <a href="https://arxiv.org/abs/2404.10716">[arXiv]</a>
+					   <a href="https://kangliao929.github.io/projects/mowa/">[Project Page]</a>
+					   <a href="https://github.com/KangLiao929/MOWA">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
 
-            <hr>
-            <div class="award">
-	<h2>Honors & Awards</h2>
-	<ul>
-		<li>Outstanding Graduate, NUDT, 2024</li>
-		<li>First Prize Scholarship, NUDT, 2023</li>
-	</ul>
-</div>
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/denoising_as_adaptation.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Denoising as Adaptation: Noise-Space Domain Adaptation for Image Restoration</strong><br />
+					   <strong>Kang Liao</strong>, Zongsheng Yue, Zhouxia Wang, Chen Change Loy<br />
+					   International Conference on Learning Representations (<strong>ICLR 2025</strong>)<br />
+					   <a href="https://arxiv.org/abs/2406.18516">[arXiv]</a>
+					   <a href="https://kangliao929.github.io/projects/noise-da">[Project Page]</a>
+					   <a href="https://github.com/KangLiao929/Noise-DA">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
 
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/InvSR.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Arbitrary-steps Image Super-resolution via Diffusion Inversion</strong><br />
+					   Zongsheng Yue, <strong>Kang Liao</strong>, Chen Change Loy<br />
+					   IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR 2025</strong>) <br />
+					   <a href="https://arxiv.org/abs/2412.09013">[arXiv]</a>
+					   <a href="https://github.com/zsyOAOA/InvSR">[Github]</a>
+					   <a href="https://huggingface.co/spaces/OAOA/InvSR">[Demo]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/stabstitch2.gif" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>StabStitch++: Unsupervised Online Video Stitching with Spatiotemporal Bidirectional Warps</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Yun Zhang, Shuaicheng Liu, Yao Zhao<br />
+					IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI 2025</strong>)<br />
+					   <a href="https://arxiv.org/abs/2505.05001">[Paper]</a>
+					   <a href="https://github.com/nie-lang/StabStitch2">[Github]</a>
+					   <a href="https://www.youtube.com/watch?v=D06ySUVqAXw">[Video]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+			<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/CoupledTPS.jpg" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Semi-Supervised Coupled Thin-Plate Spline Model for Rotation Correction and Beyond</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Shuaicheng Liu, Yao Zhao<br />
+					IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI 2024</strong>)<br />
+					   <a href="https://arxiv.org/abs/2401.13432">[arXiv]</a>
+					   <a href="https://github.com/nie-lang/CoupledTPS">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+			<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/MV-DOPNet.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>360 Layout Estimation via Orthogonal Planes Disentanglement and Multi-view Geometric Consistency Perception</strong><br />
+						IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI 2024</strong>)<br />
+					   Zhijie Shen, Chunyu Lin, Junsong Zhang, Lang Nie, <strong>Kang Liao</strong>, Yao Zhao<br />
+					   <a href="https://arxiv.org/abs/2312.16268">[arXiv]</a>
+					   <a href="https://github.com/zhijieshen-bjtu/MV-DOPNet">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+			<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/StabStitch.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Eliminating Warping Shakes for Unsupervised Online Video Stitching</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Yun Zhang, Shuaicheng Liu, Rui Ai, Yao Zhao<br />
+					European Conference on Computer Vision (<strong>ECCV 2024</strong>)<br />
+					   <a href="https://arxiv.org/abs/2403.06378">[arXiv]</a>
+					   <a href="https://github.com/nie-lang/StabStitch">[Github]</a>
+					   <a href="https://www.youtube.com/watch?v=03kGEZJHxzI">[Video]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/RecRecNet.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>RecRecNet: Rectangling Rectified Wide-Angle Images by Thin-Plate Spline Model and DoF-based Curriculum Learning</strong><br />
+					   <strong>Kang Liao</strong>*, Lang Nie*, Chunyu Lin, Zishuo Zheng, Yao Zhao<br />
+					   (*Equal contribution.)<br />
+					   International Conference on Computer Vision (<strong>ICCV 2023</strong>)<br />
+					   <a href="https://arxiv.org/abs/2301.01661">[arXiv]</a>
+					   <a href="https://github.com/KangLiao929/RecRecNet">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/UDIS++.jpg" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Parallax-Tolerant Unsupervised Deep Image Stitching</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Shuaicheng Liu, Yao Zhao<br />
+					   International Conference on Computer Vision (<strong>ICCV 2023</strong>)<br />
+					   <a href="https://arxiv.org/abs/2302.08207">[arXiv]</a>
+					   <a href="https://github.com/nie-lang/UDIS2">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+                <!--
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/Dual-Diffusion.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Dual Diffusion Architecture for Fisheye Image Rectification: Synthetic-to-Real Generalization</strong><br />
+					   Shangrong Yang, Chunyu Lin, <strong>Kang Liao</strong>, Yao Zhao<br />
+					   International Conference on Computer Vision (<strong>ICCV 2023</strong>)<br />
+					   <a href="https://arxiv.org/pdf/2301.11785.pdf">[arXiv]</a>
+					   <a href="">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+                -->
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/ICRA2023.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Learning Deposition Policies for Fused Multi-Material 3D Printing</strong><br />
+					    <strong>Kang Liao</strong>∗, Thibault Tricard∗, Michal Piovarci, Hans-Peter Seidel, Vahid Babaei<br />
+					   IEEE International Conference on Robotics and Automation (<strong>ICRA 2023</strong>)<br />
+					   (*Equal contribution.)<br />
+				           <a href="https://research-explorer.ista.ac.at/download/12976/12977/Liao2023.pdf">[PDF]</a>
+					   <a href="https://drive.google.com/file/d/1Tdp4gSHBO2YfwxCvBkaku4WtmxBkGEtb/view?usp=sharing">[Video]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+			<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/DOP-CVPR23.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Disentangling Orthogonal Planes for Indoor Panoramic Room Layout Estimation with Cross-Scale Distortion Awareness</strong><br />
+					   Zhijie Shen, Zishuo Zheng, Chunyu Lin, Lang Nie, <strong>Kang Liao</strong>, Shuai Zheng, Yao Zhao<br />
+						IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR 2023</strong>) <br />
+					   <a href="https://arxiv.org/abs/2303.00971">[arXiv]</a>
+					   <a href="https://github.com/zhijieshen-bjtu/DOPNet">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/cylinpainting.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Cylin-Painting: Seamless 360° Panoramic Image Outpainting and Beyond</strong><br />
+					   <strong>Kang Liao</strong>, Xiangyu Xu, Chunyu Lin, Wenqi Ren, Yunchao Wei, Yao Zhao<br />
+					   IEEE Transactions on Image Processing (<strong>IEEE TIP 2023</strong>)<br />
+					   <a href="https://arxiv.org/abs/2204.08563">[arXiv]</a>
+					   <a href="https://github.com/KangLiao929/Cylin-Painting">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+               <!--
+               <div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/rotation.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Deep Rotation Correction without Angle Prior</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Shuaicheng Liu, Yao Zhao<br />
+					   IEEE Transactions on Image Processing (<strong>IEEE TIP 2023</strong>)<br />
+					   <a href="https://arxiv.org/abs/2207.03054">[arXiv]</a>
+					   <a href="https://github.com/nie-lang/RotationCorrection">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+                -->
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/panoformer.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>PanoFormer: Panorama Transformer for Indoor 360° Depth Estimation</strong><br />
+					   Zhijie Shen, Chunyu Lin, <strong>Kang Liao</strong>, Lang Nie, Zishuo Zheng, Yao Zhao<br />
+					   European Conference on Computer Vision (<strong>ECCV 2022</strong>)<br />
+					   <a href="https://arxiv.org/pdf/2203.09283.pdf">[arXiv]</a>
+					   <a href="https://github.com/zhijieshen-bjtu/PanoFormer">[Github]</a>
+					  <a href="https://zhuanlan.zhihu.com/p/551880401">[Chinese Blog]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/CVPR22-Rectangling.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Deep Rectangling for Image Stitching: A Learning Baseline</strong><br />
+					   Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Shuaicheng Liu, Yao Zhao<br />
+					   IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR 2022</strong>, <strong><font color="red">Oral</font></strong>)<br />
+					   <a href="https://arxiv.org/pdf/2203.03831.pdf">[PDF]</a>
+					   <a href="https://github.com/nie-lang/DeepRectangling">[Github]</a>
+					   <a href="https://zhuanlan.zhihu.com/p/492174095">[Chinese Blog]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/ICCV21-curriculum.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Multi-Level Curriculum for Training A Distortion-Aware Barrel Distortion Rectification Model</strong><br />
+					  <strong>Kang Liao</strong>, Chunyu Lin, Lixin Liao, Yao Zhao, Weiyao Lin<br />
+					   International Conference on Computer Vision (<strong>ICCV 2021</strong>)<br />
+					   <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Multi-Level_Curriculum_for_Training_a_Distortion-Aware_Barrel_Distortion_Rectification_Model_ICCV_2021_paper.pdf">[PDF]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/ICCV21-ROP.png" width="240" height="130">					
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">					
+					  <strong>Towards Complete Scene and Regular Shape for Distortion Rectification by Curve-Aware Extrapolation</strong><br />
+					  <strong>Kang Liao</strong>, Chunyu Lin, Yunchao Wei, Feng Li, Shangrong Yang, Yao Zhao<br />
+					   International Conference on Computer Vision (<strong>ICCV 2021</strong>)<br />
+					   <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Towards_Complete_Scene_and_Regular_Shape_for_Distortion_Rectification_by_ICCV_2021_paper.pdf">[PDF]</a>
+					</p>
+				  </div>
+				</div>
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/CVPR21-PCN.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Appearance Flow-based Progressively Complementary Network for Distortion Rectification</strong><br />
+					  Shangrong Yang*, Chunyu Lin*, <strong>Kang Liao</strong>*, Chunjie Zhang, Yao Zhao<br />
+					   IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR 2021</strong>)<br />
+					   (*Equal contribution.)<br />
+					   <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Progressively_Complementary_Network_for_Fisheye_Image_Rectification_Using_Appearance_Flow_CVPR_2021_paper.pdf">[PDF]</a>
+					   <a href="https://github.com/uof1745-cmd/PCN">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/TITS21-PLIN2.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Pseudo-LiDAR Point Cloud Interpolation Based on 3D Motion Representation and Spatial Supervision</strong><br />
+					  Haojie Liu*, <strong>Kang Liao</strong>*, Chunyu Lin, Yao Zhao, Yulan Guo<br />
+					   IEEE Transactions on Intelligent Transportation Systems (<strong>IEEE TITS 2021</strong>)<br />
+					   (*Equal contribution.)<br />
+					   <a href="https://ieeexplore.ieee.org/document/9352507">[PDF]</a>
+					   <a href="https://github.com/Chunyu-Lin-bjtu/haojieliu_PLIN_Based_on_3D_Motion_Representation_and_Spatial_Super">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/TIP21-unsupervised.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>Unsupervised Deep Image Stitching: Reconstructing Stitched Features to Images</strong><br />
+					  Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Shuaicheng Liu, Yao Zhao<br />
+					   IEEE Transactions on Image Processing (<strong>IEEE TIP 2021</strong>)<br />
+					   <a href="https://ieeexplore.ieee.org/document/9472883">[PDF]</a>
+					   <a href="https://github.com/nie-lang/UnsupervisedDeepImageStitching">[Github]</a>
+					   <a href="https://zhuanlan.zhihu.com/p/386863945">[Chinese Blog]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/TIP21-ordinal.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>A Deep Ordinal Distortion Estimation Approach for Distortion Rectification</strong><br />
+					  <strong>Kang Liao</strong>, Chunyu Lin, Yao Zhao<br />
+					   IEEE Transactions on Image Processing (<strong>IEEE TIP 2021</strong>)<br />
+					   <a href="https://arxiv.org/abs/2007.10689">[arxiv]</a>
+					   <a href="https://github.com/KangLiao929/OrdinalDistortion">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+	        <!--
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/JVCIR20-view-free.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>A view-free image stitching network based on global homography</strong><br />
+					  Lang Nie, Chunyu Lin, <strong>Kang Liao</strong>, Meiqin Liu, Yao Zhao<br />
+					   Journal of Visual Communication and Image Representation (<strong>JVCIR 2020</strong>)<br />
+					   <a href="https://www.sciencedirect.com/science/article/abs/pii/S1047320320301784">[PDF]</a>
+					   <a href="https://github.com/nie-lang/DeepImageStitching-1.0">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+                -->
+                <!--
+		<div class="paper short">
+				<div class="sub-left">
+					<span></span>
+					<img src="assets/images/CSVT19-DRGAN.png" width="240" height="130">
+				</div>
+				<div class="sub-right">
+				<div class="media">
+				  <div class="media-body">
+					<p class="media-heading">
+					  <strong>DR-GAN: Automatic Radial Distortion Rectification Using Conditional GAN in Real-Time</strong><br />
+					  <strong>Kang Liao</strong>, Chunyu Lin, Yao Zhao, Moncef Gabbouj<br />
+					   IEEE Transactions on Circuits and Systems for Video Technology (<strong>IEEE TCSVT 2019</strong>)<br />
+					   <a href="https://ieeexplore.ieee.org/document/8636975">[PDF]</a>
+					   <a href="https://github.com/KangLiao929/DR-GAN">[Github]</a>
+					</p>
+				  </div>
+				</div>	
+				</div>
+			</div>
+                -->
+
+
+			 <hr>
+		     
 <div class='award'>
 	<h3>
-		Selected Awards
+		Selected Award
 	</h3>
-	<ul>
-		<li>Outstanding Graduate of NUDT (2024)</li>
-		<li>First-class Academic Scholarship (2023)</li>
+	<ul >
+		<li>Winner of the MVL Challenge on OmniCV workshop at CVPR2023 (Jun. 2023.)</li>
+	        <li>ZHIXING Scholarship (or President Scholarship) of BJTU (Jun. 2021.)</li>
+		<li>China National Scholarship (Oct. 2021, Oct. 2020.)</li>
 	</ul>
 	
 	<h3>
@@ -197,34 +740,64 @@
 	</h3>
 
 	<h4>
-		<a name='research'></a> Research Experience
+		<a name='area chair'></a> Area Chair
 	</h4>
 
-	<ul>
-		<li>Research on Computing Geometry and Image Warping (2023-Present)</li>
-		<li>Study on Image Processing Algorithms (2022-2023)</li>
+	<ul >
+		<li>Neural Information Processing Systems (NeurIPS) 2025</li>
+		<li>International Joint Conference on Neural Networks (IJCNN) 2025</li>
+
 	</ul>
 	
 	<h4>
-		<a name='skills'></a> Technical Skills
+		<a name='reviewer'></a> Reviewer
 	</h4>
 	
-	<ul>
-		<li>Programming Languages: Python, C++</li>
-		<li>Deep Learning Frameworks: PyTorch, TensorFlow</li>
-		<li>Computer Vision Libraries: OpenCV, PIL</li>
-		<li>Version Control: Git</li>
+	<ul >
+		<li>International Journal of Computer Vision (IJCV)</li>
+		<li>IEEE Transactions on Image Processing (TIP)</li>
+		<li>IEEE Transactions on Visualization and Computer Graphics (TVCG) </li>
+		<li>IEEE Transactions on Medical Imaging (TMI) </li>
+		<li>Transactions on Machine Learning Research (TMLR) </li>
+		<li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022, 2023, 2024, 2025</li>
+		<li>European Conference on Computer Vision (ECCV) 2022, 2024</li>
+		<li>International Conference on Computer Vision (ICCV) 2021, 2023, 2025</li>
+		<li>Neural Information Processing Systems (NeurIPS) 2023, 2024 (<a href="https://neurips.cc/Conferences/2024/ProgramCommittee">Top Reviewer</a>), 2025</li>
+		<li>International Conference on Learning Representations (ICLR) 2024, 2025</li>
+		<li>International Conference on Machine Learning (ICML) 2024, 2025</li>
+		<li>AAAI Conference on Artificial Intelligence (AAAI) 2023, 2024, 2025</li>
+		<li>IEEE International Conference on Robotics and Automation (ICRA) 2023, 2024</li>
 	</ul>
+	
+	<h4>
+		<a name='talk'></a> Talk
+	</h4>
+	
+	<ul >
+		<li>"Towards Complete Scene and Regular Shape for Distortion Rectification by Curve-Aware Extrapolation", Graduate academic forum of Chinese Journal of Image and Graphics, Sep. 2021</li>
+		<li>"Wide Field of View (FoV) Computer Vision", UT Austin, Apr. 2022</li>
+		<li>"Wide Field of View (FoV) Computer Vision and Beyond", BJTU, May. 2022</li>
+	</ul>
+	
+	<h4>
+		<a name='blog'></a> Blog
+	</h4>
+	
+	<ul >
+		<li><a href="https://www.zhihu.com/column/self-driving-visual-perception">Self Driving and Visual Perception</a></li>
+		<li><a href="https://mp.weixin.qq.com/s/rkbC0OsERu4tKsnTSDeGBw">Future trend of computer vision: a detailed explanation of five major trends</a></li>
+	</ul>
+	
 </div>
 
 
 
-        </div><!--//main-body-->
-    </div>
+     </div><!--//main-body-->
+
     <hr>
 	<footer class="footer">
-        <div class="text-center">
-            <small class="copyright"> &copy Wenting Luan 2024</small>
+        <div class="container"> 
+                <small class="copyright"> &copy Kang Liao 2025</small>
         </div><!--//container-->
     </footer><!--//footer-->
 
