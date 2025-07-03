@@ -1,23 +1,20 @@
 title: Wenting Luan
+
+#sidebar links
 email: luanwenting20@163.com
-description: >- 
-  Personal website of Wenting Luan
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lwttttt.github.io" # the base hostname & protocol for your site
-github_username: lwttttt
+website_github: Github
+#website_google: Google Scholar
+
+# GitHub Pages settings
+baseurl: ""
+url: "https://lwttttt.github.io"
+markdown: kramdown
+theme: minima
 
 # Build settings
-markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-# Theme settings
-theme: minima
-
-# Assets
-sass:
-  style: compressed
 
 # Exclude from processing
 exclude:
