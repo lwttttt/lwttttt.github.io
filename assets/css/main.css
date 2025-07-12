@@ -10,10 +10,10 @@ body {
 
 .container {
 	max-width: 1000px;
-	padding-left: 100px;
-	padding-right: 15px;
-	margin-right:auto;
-	margin-left:auto
+  padding-left: 100px;
+  padding-right: 15px;
+  margin-right:auto;
+  margin-left:auto
 }
 
 h3 {
@@ -29,12 +29,12 @@ h3 {
 
 li {list-style-type:none;}
 
-.media{
-	border-left: 6px #D26900 solid;
-}
-.media-body{
-	padding-left:20px;
-}
+ .media{
+	 border-left: 6px #D26900 solid;
+ }
+ .media-body{
+	 padding-left:20px;
+ }
 .projectheader{
 	text-align:center;
 }
@@ -45,22 +45,22 @@ li {list-style-type:none;}
 	width: 100%;
 }
 .researchInt{
-	padding-top: 10px;
+	 padding-top: 10px;
 }
 .researchInt ul li{
-	list-style-type:disc;
-	line-height:30px;
+	 list-style-type:disc;
+	 line-height:30px;
 }
 .award ul li{
-	list-style-type:disc;
-	line-height:30px;
+	 list-style-type:disc;
+	 line-height:30px;
 }
 .news ul li{
-	font-size:16px;
-	list-style-type:none;
-	line-height:30px;
-	padding:0;
-	margin:0;
+	 font-size:16px;
+	 list-style-type:none;
+	 line-height:30px;
+	 padding:0;
+	 margin:0;
 }
 .news ul{
 	margin:0px;
