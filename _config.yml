@@ -9,7 +9,6 @@ website_github: Github
 baseurl: ""
 url: "https://lwttttt.github.io"
 markdown: kramdown
-theme: minima
 
 # Build settings
 plugins:
