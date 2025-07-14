@@ -40,6 +40,9 @@
         var leftImg = document.createElement('img');
         leftImg.src = self.images[0].src;
         leftImg.alt = self.images[0].label || '';
+        leftImg.onload = function() {
+          self.adjustContainerSize();
+        };
         leftImage.appendChild(leftImg);
         
         if (self.options.showLabels && self.images[0].label) {
@@ -107,6 +110,30 @@
         self.controller = controller;
       };
       
+      this.adjustContainerSize = function() {
+        var img = self.leftImage.querySelector('img');
+        if (img && img.naturalWidth && img.naturalHeight) {
+          var container = document.querySelector(self.selector);
+          var maxWidth = Math.min(img.naturalWidth, window.innerWidth * 0.9);
+          var maxHeight = Math.min(img.naturalHeight, window.innerHeight * 0.7);
+          
+          // Calculate aspect ratio
+          var aspectRatio = img.naturalWidth / img.naturalHeight;
+          var containerWidth, containerHeight;
+          
+          if (maxWidth / aspectRatio <= maxHeight) {
+            containerWidth = maxWidth;
+            containerHeight = maxWidth / aspectRatio;
+          } else {
+            containerWidth = maxHeight * aspectRatio;
+            containerHeight = maxHeight;
+          }
+          
+          container.style.width = containerWidth + 'px';
+          container.style.height = containerHeight + 'px';
+        }
+      };
+
       this.bindEvents = function() {
         var isDragging = false;
         var startX = 0;
@@ -183,7 +210,7 @@
         // Responsive handling
         if (self.options.makeResponsive) {
           window.addEventListener('resize', function() {
-            // Redraw if needed
+            self.adjustContainerSize();
           });
         }
       };

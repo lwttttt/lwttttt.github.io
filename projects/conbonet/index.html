@@ -80,11 +80,11 @@
         <div class="tab_container">
           <!-- Expanded image -->
           <div id="juxtapose-embed" data-startingposition="50%" data-animate="true" class="juxtapose"
-            style="height: 500px; width: 800px; margin: 0 auto;">
+            style="max-width: 90vw; max-height: 70vh; width: auto; height: auto; margin: 0 auto;">
           </div>
 
           <div>
-            <div id="juxtapose-hidden"></div>
+            <div id="juxtapose-hidden" style="display: none; position: absolute; left: -9999px; opacity: 0;"></div>
           </div>
 
           <!-- Image text -->
@@ -233,32 +233,49 @@
   };
 
   const juxtaposeSelector = "#juxtapose-embed";
-  const transientSelector = "#juxtapose-hidden";
 
   function tab_gallery_click(name) {
-    // Get the expanded image
-    let inputImage = {
-      label: "Input",
-    };
-    let outputImage = {
-      label: "ConBo-Net",
-    };
-
-    inputImage.src = "static/images/".concat(name, "_input", ".jpg")
-    outputImage.src = "static/images/".concat(name, "_output", ".jpg")
-
-    let images = [inputImage, outputImage];
-    let options = slider.options;
-    options.callback = function (obj) {
-      var newNode = document.getElementById(obj.selector.substring(1));
-      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
-      console.log(obj.selector.substring(1));
-      if (newNode && oldNode && newNode.children[0] && oldNode.children[0]) {
-        oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+    // Update images directly without creating temporary slider
+    var inputSrc = "static/images/".concat(name, "_input", ".jpg");
+    var outputSrc = "static/images/".concat(name, "_output", ".jpg");
+    
+    // Find existing images in the current slider
+    var leftImg = slider.leftImage.querySelector('img');
+    var rightImg = slider.rightImage.querySelector('img');
+    
+    if (leftImg && rightImg) {
+      // Add loading fade effect
+      leftImg.style.opacity = '0.7';
+      rightImg.style.opacity = '0.7';
+      
+      // Update sources directly
+      leftImg.src = inputSrc;
+      rightImg.src = outputSrc;
+      
+      // Handle loading completion
+      var loadedCount = 0;
+      function onImageLoaded() {
+        loadedCount++;
+        if (loadedCount === 2) {
+          leftImg.style.opacity = '1';
+          rightImg.style.opacity = '1';
+          slider.adjustContainerSize();
+        }
       }
-    };
-
-    slider = new juxtapose.JXSlider(transientSelector, images, options);
+      
+      leftImg.onload = onImageLoaded;
+      rightImg.onload = onImageLoaded;
+      
+      // Error handling
+      leftImg.onerror = function() {
+        console.error('Failed to load image:', inputSrc);
+        leftImg.style.opacity = '1';
+      };
+      rightImg.onerror = function() {
+        console.error('Failed to load image:', outputSrc);
+        rightImg.style.opacity = '1';
+      };
+    }
   };
 
   // Initialize the slider when page loads
