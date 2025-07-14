@@ -33,10 +33,9 @@
         var slider = document.createElement('div');
         slider.className = 'jx-slider';
         
-        // Create left image
+        // Create bottom image (original)
         var leftImage = document.createElement('div');
         leftImage.className = 'jx-image jx-left';
-        leftImage.style.width = self.options.startingPosition + '%';
         
         var leftImg = document.createElement('img');
         leftImg.src = self.images[0].src;
@@ -50,10 +49,10 @@
           leftImage.appendChild(leftLabel);
         }
         
-        // Create right image
+        // Create top image (processed) with initial clip-path
         var rightImage = document.createElement('div');
         rightImage.className = 'jx-image jx-right';
-        rightImage.style.width = (100 - parseFloat(self.options.startingPosition)) + '%';
+        rightImage.style.clipPath = 'polygon(0 0, ' + self.options.startingPosition + '% 0, ' + self.options.startingPosition + '% 100%, 0 100%)';
         
         var rightImg = document.createElement('img');
         rightImg.src = self.images[1].src;
@@ -116,8 +115,8 @@
         function updateSlider(percentage) {
           percentage = Math.max(0, Math.min(100, percentage));
           
-          self.leftImage.style.width = percentage + '%';
-          self.rightImage.style.width = (100 - percentage) + '%';
+          // Update clip-path for overlay effect
+          self.rightImage.style.clipPath = 'polygon(0 0, ' + percentage + '% 0, ' + percentage + '% 100%, 0 100%)';
           self.handle.style.left = percentage + '%';
           self.controller.setAttribute('aria-valuenow', percentage);
         }

@@ -71,52 +71,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="has-text-centered content">
-        <h2 class="title is-3">Abstract</h2>
-        <p style="text-align: left;">
-          The mainstream approach for correcting distortions in wide-angle images typically involves a cascading process of rectification followed by rectangling. These tasks address distorted image content and irregular boundaries separately, using two distinct pipelines. However, this independent optimization prevents the two stages from benefiting each other. It also increases susceptibility to error accumulation and misaligned optimization, ultimately degrading the quality of the rectified image and the performance of downstream vision tasks.
-        </p>
-        <p style="text-align: left;">
-          In this work, we observe and verify that transformations based on motion representations (<i>e.g.</i>, Thin-Plate Spline) exhibit structural continuity in both rectification and rectangling tasks. This continuity enables us to establish their relationships through the perspective of structural morphing, allowing for an optimal solution within a single end-to-end framework.
-        </p>
-        <p style="text-align: left;">
-          To this end, we propose <b>ConBo-Net</b>, a unified Content and Boundary modeling approach for one-stage wide-angle image correction. Our method jointly addresses distortion rectification and boundary rectangling in an end-to-end manner. To further enhance the model's structural recovery capability, we incorporate physical priors based on the wide-angle camera model during training and introduce an ordinal geometric loss to enforce curvature monotonicity. Extensive experiments demonstrate that ConBo-Net outperforms state-of-the-art two-stage solutions.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="has-text-centered content">
-        <h2 class="title is-3">Motivation</h2>
-        <p style="text-align: left;">
-          Given a distorted wide-angle image <i>I</i><sub>0</sub>, our objective is to generate a distortion-free image <i>I</i><sub>1</sub> with rectangular boundaries that preserve both geometric fidelity and content integrity. Through systematic analysis of TPS deformation meshes, we reveal a critical insight: <b>the optimal rectified-and-rectangled state naturally emerges as a continuous intermediate deformation field bridging the geometry-preserving rectification mesh and the boundary-constrained rectangling mesh, with explicit structural correspondence maintained during morphing to harmonize geometric accuracy and boundary regularity.</b> Thus, we design to lift the structural morphing for wide-angle image rectification that unifies the rectification and rectangling process via morphing.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div style="text-align: center;">
-    <img src="static/images/1.jpg" style="padding: 2rem 0rem 0rem 0rem; width: 800px;">
-  </div>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="has-text-centered content">
-        <h2 class="title is-3">Method Overview</h2>
-        <p style="text-align: left;">
-          <b>Architecture.</b> Our ConboNet consists of three main components:
-            </p>
-        <div style="text-align: center;">
-          <img src="static/images/method.jpg" style="padding: 2rem 0rem 3rem 0rem; width: 1000px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Interactive Results Section -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -155,6 +109,52 @@
         <p style="margin-top: 10px; font-size: 14px; color: #666;">
           Click on the thumbnails above to compare input and output images
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Abstract</h2>
+        <p style="text-align: left;">
+          The mainstream approach for correcting distortions in wide-angle images typically involves a cascading process of rectification followed by rectangling. These tasks address distorted image content and irregular boundaries separately, using two distinct pipelines. However, this independent optimization prevents the two stages from benefiting each other. It also increases susceptibility to error accumulation and misaligned optimization, ultimately degrading the quality of the rectified image and the performance of downstream vision tasks.
+        </p>
+        <p style="text-align: left;">
+          In this work, we observe and verify that transformations based on motion representations (<i>e.g.</i>, Thin-Plate Spline) exhibit structural continuity in both rectification and rectangling tasks. This continuity enables us to establish their relationships through the perspective of structural morphing, allowing for an optimal solution within a single end-to-end framework.
+        </p>
+        <p style="text-align: left;">
+          To this end, we propose <b>ConBo-Net</b>, a unified Content and Boundary modeling approach for one-stage wide-angle image correction. Our method jointly addresses distortion rectification and boundary rectangling in an end-to-end manner. To further enhance the model's structural recovery capability, we incorporate physical priors based on the wide-angle camera model during training and introduce an ordinal geometric loss to enforce curvature monotonicity. Extensive experiments demonstrate that ConBo-Net outperforms state-of-the-art two-stage solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom: 1rem;">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Motivation</h2>
+        <p style="text-align: left;">
+          Given a distorted wide-angle image <i>I</i><sub>0</sub>, our objective is to generate a distortion-free image <i>I</i><sub>1</sub> with rectangular boundaries that preserve both geometric fidelity and content integrity. Through systematic analysis of TPS deformation meshes, we reveal a critical insight: <b>the optimal rectified-and-rectangled state naturally emerges as a continuous intermediate deformation field bridging the geometry-preserving rectification mesh and the boundary-constrained rectangling mesh, with explicit structural correspondence maintained during morphing to harmonize geometric accuracy and boundary regularity.</b> Thus, we design to lift the structural morphing for wide-angle image rectification that unifies the rectification and rectangling process via morphing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <img src="static/images/1.jpg" style="padding: 1rem 0rem 0rem 0rem; width: 800px;">
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Method Overview</h2>
+        <p style="text-align: left;">
+          <b>Architecture.</b> Our ConboNet consists of three main components:
+            </p>
+        <div style="text-align: center;">
+          <img src="static/images/method.jpg" style="padding: 2rem 0rem 3rem 0rem; width: 1000px;">
+        </div>
       </div>
     </div>
   </section>
