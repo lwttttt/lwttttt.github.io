@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  
+  <!-- Interactive Gallery Styles -->
+  <link rel="stylesheet" href="./static/css/tab_gallery.css">
+  <link rel="stylesheet" href="./static/css/juxtapose.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -67,16 +71,30 @@
     </div>
   </section>
 
-  <section class="section" style="padding-bottom: 0px; padding-top: 0px;">
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-justified">
-        <div class="column is-two-thirds">
-          <p>
-            <b>ConboNet</b> is a novel approach for wide-angle image correction that unifies content and boundary modeling in a single stage. 
-            Our method effectively addresses the challenges of preserving both structural content and regular boundaries in wide-angle image correction,
-            achieving superior results compared to traditional multi-stage approaches.
-          </p>
-        </div>
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Abstract</h2>
+        <p style="text-align: left;">
+          The mainstream approach for correcting distortions in wide-angle images typically involves a cascading process of rectification followed by rectangling. These tasks address distorted image content and irregular boundaries separately, using two distinct pipelines. However, this independent optimization prevents the two stages from benefiting each other. It also increases susceptibility to error accumulation and misaligned optimization, ultimately degrading the quality of the rectified image and the performance of downstream vision tasks.
+        </p>
+        <p style="text-align: left;">
+          In this work, we observe and verify that transformations based on motion representations (<i>e.g.</i>, Thin-Plate Spline) exhibit structural continuity in both rectification and rectangling tasks. This continuity enables us to establish their relationships through the perspective of structural morphing, allowing for an optimal solution within a single end-to-end framework.
+        </p>
+        <p style="text-align: left;">
+          To this end, we propose <b>ConBo-Net</b>, a unified Content and Boundary modeling approach for one-stage wide-angle image correction. Our method jointly addresses distortion rectification and boundary rectangling in an end-to-end manner. To further enhance the model's structural recovery capability, we incorporate physical priors based on the wide-angle camera model during training and introduce an ordinal geometric loss to enforce curvature monotonicity. Extensive experiments demonstrate that ConBo-Net outperforms state-of-the-art two-stage solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered content">
+        <h2 class="title is-3">Motivation</h2>
+        <p style="text-align: left;">
+          Given a distorted wide-angle image <i>I</i><sub>0</sub>, our objective is to generate a distortion-free image <i>I</i><sub>1</sub> with rectangular boundaries that preserve both geometric fidelity and content integrity. Through systematic analysis of TPS deformation meshes, we reveal a critical insight: <b>the optimal rectified-and-rectangled state naturally emerges as a continuous intermediate deformation field bridging the geometry-preserving rectification mesh and the boundary-constrained rectangling mesh, with explicit structural correspondence maintained during morphing to harmonize geometric accuracy and boundary regularity.</b> Thus, we design to lift the structural morphing for wide-angle image rectification that unifies the rectification and rectangling process via morphing.
+        </p>
       </div>
     </div>
   </section>
@@ -95,6 +113,48 @@
         <div style="text-align: center;">
           <img src="static/images/method.jpg" style="padding: 2rem 0rem 3rem 0rem; width: 1000px;">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Results Section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Interactive Results</h2>
+        <!-- The expanding image container -->
+        <div class="tab_container">
+          <!-- Expanded image -->
+          <div id="juxtapose-embed" data-startingposition="50%" data-animate="true" class="juxtapose"
+            style="height: 500px; width: 800px; margin: 0 auto;">
+          </div>
+
+          <div>
+            <div id="juxtapose-hidden"></div>
+          </div>
+
+          <!-- Image text -->
+          <div id="imgtext"></div>
+        </div>
+
+        <!-- The grid: thumbnail images -->
+        <div class="tab_row" style="margin-top: 20px;">
+          <div class="tab_column">
+            <img src="static/images/sample1_input.jpg" onclick="tab_gallery_click('sample1');" style="cursor: pointer;">
+          </div>
+          <div class="tab_column">
+            <img src="static/images/sample2_input.jpg" onclick="tab_gallery_click('sample2');" style="cursor: pointer;">
+          </div>
+          <div class="tab_column">
+            <img src="static/images/sample3_input.jpg" onclick="tab_gallery_click('sample3');" style="cursor: pointer;">
+          </div>
+          <div class="tab_column">
+            <img src="static/images/sample4_input.jpg" onclick="tab_gallery_click('sample4');" style="cursor: pointer;">
+          </div>
+        </div>
+        <p style="margin-top: 10px; font-size: 14px; color: #666;">
+          Click on the thumbnails above to compare input and output images
+        </p>
       </div>
     </div>
   </section>
@@ -153,6 +213,67 @@
       </div>
     </div>
   </footer>
+
+<!-- Interactive Gallery Scripts -->
+<script src="./static/js/juxtapose.js"></script>
+
+<script>
+  var slider;
+  let origImages = [
+    { "src": "static/images/sample1_input.jpg", "label": "Input", },
+    { "src": "static/images/sample1_output.jpg", "label": "ConBo-Net", }
+  ];
+  let origOptions = {
+    "makeResponsive": true,
+    "showLabels": true,
+    "mode": "horizontal",
+    "showCredits": false,
+    "animate": true,
+    "startingPosition": "50"
+  };
+
+  const juxtaposeSelector = "#juxtapose-embed";
+  const transientSelector = "#juxtapose-hidden";
+
+  function tab_gallery_click(name) {
+    // Get the expanded image
+    let inputImage = {
+      label: "Input",
+    };
+    let outputImage = {
+      label: "ConBo-Net",
+    };
+
+    inputImage.src = "static/images/".concat(name, "_input", ".jpg")
+    outputImage.src = "static/images/".concat(name, "_output", ".jpg")
+
+    let images = [inputImage, outputImage];
+    let options = slider.options;
+    options.callback = function (obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
+      console.log(obj.selector.substring(1));
+      if (newNode && oldNode && newNode.children[0] && oldNode.children[0]) {
+        oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      }
+    };
+
+    slider = new juxtapose.JXSlider(transientSelector, images, options);
+  };
+
+  // Initialize the slider when page loads
+  (function () {
+    // Check if juxtapose library is loaded
+    if (typeof juxtapose !== 'undefined') {
+      slider = new juxtapose.JXSlider(juxtaposeSelector, origImages, origOptions);
+    } else {
+      console.log('Juxtapose library not loaded');
+    }
+  })();
+
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+</script>
 
 </body>
 </html> 
